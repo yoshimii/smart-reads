@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 
-
 export default function Register() {
     const [ register, setRegister ] = useState({ name: '', email: '', password: '' })
 
-
     let handleChange = e => {
         setRegister({
-            [e.target.name]: e.target.value
+            ...register, [e.target.name]: e.target.value
         })
     }
 
     let handleSubmit = e => {
-        e.preventDefault();
+        e.preventDefault()
         setRegister({
-            [e.target.name]: ""
+            name: '', email: '', password: ''
         })
     }
 
@@ -25,26 +23,26 @@ export default function Register() {
             <input
             type='text'
             name="name"
-            placeholder='Name'
-            value={register.name || ''}
+            value={register.name}
             onChange={handleChange}
+            placeholder='Name'
             />
             <input
             type='text'
-            name='email'
-            placeholder='you@yours.com'
-            value={register.email || ''}
+            name='email'            
+            value={register.email}
             onChange={handleChange}
+            placeholder='you@yours.com'
             />
             <input
             type='password'
-            name='password'
-            placeholder=""
-            value={register.password || ''}
+            name='password'            
+            value={register.password}
             onChange={handleChange}
+            placeholder=""
             />
-            <button type='submit' onClick={() => handleSubmit}>Submit</button>
+            <button type='submit'>Sign up</button>
         </form>
+        
     )
 }
-
