@@ -1,8 +1,9 @@
 {
-  "name": "create-react-app",
+  "name": "smart-reads",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint": "^5.6.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-scripts": "2.1.1"
@@ -11,7 +12,8 @@
     "dev": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
