@@ -42,3 +42,13 @@ code:before,
 code:after {
   content: '\`';
 }
+
+header {
+  width: 100%;
+}
+
+img {
+  object-fit: cover;
+  height: 295px;
+  width: 100%;
+}
