@@ -1,0 +1,70 @@
+form {
+    display: flex;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    border: 1px solid #d0d0c8;
+    border-radius: 4px;
+    position: relative;
+    top: -280px;
+    background-color: white;
+}
+
+form h1 {
+    font-size: 20px;
+    color: #382110;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 290px;
+}
+
+form label {
+    font-size: 12px;
+    align-items: left;
+}
+
+::placeholder {
+    color: #ccccd1;
+}
+
+button {
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    color: #333333;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 12px;
+    margin: 20px auto 20px 0;
+}
+
+span {
+    font-size: 12px;
+}
+
+.registerOptions, .loginOptions {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.options {
+    display: flex;
+    align-content: center;
+    margin: auto;
+}
+
+span a {
+    margin-left: 10px;
+}
