@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 
 export default function Register() {
@@ -24,22 +25,36 @@ export default function Register() {
     return(
 
         <form onSubmit={handleSubmit}>
-            Sign up for Smart Reads
-            <input
-            type='text'
-            name='username'            
-            value={register.username}
-            onChange={handleChange}
-            placeholder='you@yours.com'
+            <h1>Sign up for Smart Reads</h1>
+            <div>
+                <label for='user_email'>Email address</label>
+                <input
+                type='text'
+                name='username'            
+                value={register.username}
+                onChange={handleChange}
+                placeholder='you@yours.com'
+                />
+            </div>
+            <div>
+                <label for='user_password'>Password</label>
+                <input
+                type='password'
+                name='password'            
+                value={register.password}
+                onChange={handleChange}
+                placeholder=""
             />
-            <input
-            type='password'
-            name='password'            
-            value={register.password}
-            onChange={handleChange}
-            placeholder=""
-            />
-            <button type='submit'>Sign up</button>
+            </div>
+            <div className='registerOptions'>
+                <button type='submit'>Sign up</button>
+                    <div className='options'>
+                        <span className='registerSpan'>Already a member?
+                            <Link to='/login'>Sign in</Link>
+                        </span>
+                    </div>
+            </div>
+            
         </form>
         
     )
