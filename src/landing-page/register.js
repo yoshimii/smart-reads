@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 
 export default function Register() {
-    const [ register, setRegister ] = useState({ name: '', email: '', password: '' })
+    const [ register, setRegister ] = useState({ username: '', password: '' })
 
     let handleChange = e => {
         setRegister({
@@ -11,8 +12,12 @@ export default function Register() {
 
     let handleSubmit = e => {
         e.preventDefault()
+        axiosWithAuth().post('/register', register)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+            
         setRegister({
-            name: '', email: '', password: ''
+            username: '', password: ''
         })
     }
 
@@ -22,15 +27,8 @@ export default function Register() {
             Sign up for Smart Reads
             <input
             type='text'
-            name="name"
-            value={register.name}
-            onChange={handleChange}
-            placeholder='Name'
-            />
-            <input
-            type='text'
-            name='email'            
-            value={register.email}
+            name='username'            
+            value={register.username}
             onChange={handleChange}
             placeholder='you@yours.com'
             />
