@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 
 export default function Login () {
-    const [ login, setLogin ] = useState({ email: '', password: '' })
+    const [ login, setLogin ] = useState({ username: '', password: '' })
 
     let handleChange = e => {
         setLogin({
@@ -11,8 +12,12 @@ export default function Login () {
 
     let handleSubmit = e => {
         e.preventDefault()
+        axiosWithAuth().post('/login', login)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+            
         setLogin({
-            email: '', password: ''
+            username: '', password: ''
         })
     }
 
@@ -22,8 +27,8 @@ export default function Login () {
             Sign in to Smart Reads
             <input
             type='text'
-            name='email'
-            value={login.email}            
+            name='username'
+            value={login.username}            
             onChange={handleChange}
             placeholder='you@yours.com'
             />
