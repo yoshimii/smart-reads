@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import Register from './landing-page/register';
-import Login from './landing-page/login';
+import Navigation from './navigation'
 
 function App() {
 
   return (
     <>
-     <Register/>
-     <Login/>
+    <Navigation/>
     </>
   );
 }
