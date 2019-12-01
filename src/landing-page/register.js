@@ -26,8 +26,9 @@ export default function Register() {
 
         <form onSubmit={handleSubmit}>
             <h1>Sign up for Smart Reads</h1>
+            <p>Sign up today to start storing and improving search results based on our unique intelligent search algorithm. <a href='https://rutumulkar.com/blog/2016/NLP-ML/' target='_blank' rel="noopener noreferrer">Learn more about Artificial Intelligence</a></p>
             <div>
-                <label for='user_email'>Email address</label>
+                <label htmlFor='user_email'>Email address</label>
                 <input
                 type='text'
                 name='username'            
@@ -37,7 +38,7 @@ export default function Register() {
                 />
             </div>
             <div>
-                <label for='user_password'>Password</label>
+                <label htmlFor='user_password'>Password</label>
                 <input
                 type='password'
                 name='password'            

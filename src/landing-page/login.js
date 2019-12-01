@@ -28,7 +28,7 @@ export default function Login () {
         <form onSubmit={handleSubmit}>
             <h1>Sign in to Smart Reads</h1>
             <div className='input email'>
-                <label for='user_email'>Email address</label>
+                <label htmlFor='user_email'>Email address</label>
                 <input
                 type='text'
                 name='username'
@@ -38,7 +38,7 @@ export default function Login () {
                 />
             </div>
             <div className='input password'>
-                <label for='user_password'>Password</label>
+                <label htmlFor='user_password'>Password</label>
                 <input
                 type='password'
                 name='password'

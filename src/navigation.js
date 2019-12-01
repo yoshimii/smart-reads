@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Register from './landing-page/register';
 import Login from './landing-page/login';
+import Home from './landing-page/Home'
+import { MdLocalLibrary, MdLockOpen, MdHome, MdCardMembership } from 'react-icons/md'
 
 function Navigation() {
 
@@ -10,10 +12,10 @@ function Navigation() {
     <nav className='top-navigation'>
         <Link to='/' className='logo'><h3>Smart Reads</h3></Link>
         <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/login'>My Books</Link></li>
-            <li><Link to='/register'>Join</Link></li>
-            <li><Link to='/login'>Sign In</Link></li>
+            <li><Link to='/' className='nav'><span className='nav'><MdHome/></span>Home</Link></li>
+            <li><Link to='/login' className='nav'><span className='nav'><MdLocalLibrary/></span>My Books</Link></li>
+            <li><Link to='/register' className='nav'><span className='nav'><MdCardMembership/></span>Join</Link></li>
+            <li><Link to='/login' className='nav'><span className='nav'><MdLockOpen/></span>Sign In</Link></li>
         </ul>
         </nav>
         <header>
@@ -22,7 +24,7 @@ function Navigation() {
 
 
 
-        <Route exact path='/' />
+        <Route exact path='/' render={(props) => <Home {...props} />}/>
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
     </>
