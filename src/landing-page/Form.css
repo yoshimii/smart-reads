@@ -7,7 +7,7 @@ form {
     border: 1px solid #d0d0c8;
     border-radius: 4px;
     position: relative;
-    top: -280px;
+    top: -23rem;
     background-color: white;
 }
 
@@ -72,3 +72,24 @@ form span {
 span a {
     margin-left: 10px;
 }
+
+@media (max-width: 1024px) {
+  
+    form p {
+      font-size: .75rem;
+    }
+
+    form {
+        top: -23rem;
+    }
+  
+    img {
+      height: 400px;
+    }
+
+    form {
+        margin: 1rem;
+        max-width: 400px;
+      }
+  }
+  
