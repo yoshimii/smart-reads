@@ -18,6 +18,7 @@ form h1 {
 
 form p {
     text-align: center;
+    padding: 1rem;
 }
 
 input {
@@ -88,8 +89,39 @@ span a {
     }
 
     form {
-        padding: 1rem;
-        max-width: 400px;
+        max-width: 500px;
       }
   }
+
+  @media (max-width: 750) {
+      form {
+          top: -24rem;
+      }
+  }
+
+  @media (max-width: 500px) {
+      form {
+          top: -24rem;
+          max-width: 375px;
+      }
+  }
+
+  @media (max-width: 375px) {
+    form {
+        top: -24rem;
+        max-width: 300px;
+    }
+
+    form input {
+        width: 250px;
+    }
+
+    .registerOptions {
+        min-width: 250px;
+    }
+
+    .loginOptions {
+        min-width: 250px;
+    }
+}
   
