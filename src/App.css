@@ -40,16 +40,17 @@ header {
 
 img {
   object-fit: cover;
-  height: 295px;
+  height: 400px;
   width: 100%;
 }
 
 .logo {
   width: 30%;
-  padding: auto 0;
-  margin: auto 0;
+  display: flex;
+  align-items: center;
   color: #453523;
   text-decoration: none;
+  margin-left: 1rem;
 }
 
 ul {
@@ -124,6 +125,7 @@ text-align: center;
   .logo {
     margin-left: 1rem;
   }
+
   .letters {
     font-size: 1.5rem;
   }
@@ -135,10 +137,9 @@ text-align: center;
   }
 }
 
-@media (max-width: 500px) {
-  .logo {
-    margin-left: 1rem;
-    font-size: 12px;
+@media (max-width: 530px) {
+  .logo h3 {
+    font-size: .85rem;
   }
 
   ul {
@@ -149,6 +150,7 @@ text-align: center;
     font-size: 1rem;
     background-color: black;
   }
+
   .text-wrapper2 {
     font-size: 1rem;
     background-color: black;
@@ -156,6 +158,10 @@ text-align: center;
 }
 
 @media (max-width: 350px) {
+  .logo h3 {
+    font-size: .85rem;
+  }
+  
   .letters {
     font-size: .85rem;
   }
