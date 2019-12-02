@@ -1,11 +1,8 @@
-h1 {
-  font-size: 45px;
-}
 h2 {
   margin-top: 1.5em;
 }
 p {
-  font-size: 16px;
+  font-size: 1rem;
 }
 ul a {
   border-bottom: 1px solid #f4f2e9;
@@ -88,10 +85,10 @@ text-align: center;
 
 .ml7 {
   position: relative;
-  top: -140px;
-  left: 30px;
+  top: -9rem;
   font-weight: 900;
-  font-size: 3.7em;
+  font-size: 3rem;
+  margin-left: 1rem;
 }
 .ml7 .text-wrapper {
   position: relative;
@@ -107,14 +104,63 @@ text-align: center;
   line-height: 1em;
 }
 
-.text-wrapper2 {
-  opacity: 0;
-  color: #242020;
+.text-wrapper2 {  opacity: 0;
+  color: white;
+  position: relative;
+  top: -13rem;
+  margin-left: 1rem;;
+  font-weight: 900;
 }
 
-.text-wrapper2 {
-  position: relative;
-  top: -200px;
-  left: 30px;
-  font-weight: 900;
+@media (max-width: 1250px) {
+  ul {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    margin-left: 1rem;
+  }
+  .letters {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    margin-left: 1rem;
+    font-size: 12px;
+  }
+
+  ul {
+    font-size: 10px;
+  }
+
+  .letters {
+    font-size: 1rem;
+    background-color: black;
+  }
+  .text-wrapper2 {
+    font-size: 1rem;
+    background-color: black;
+  }
+}
+
+@media (max-width: 350px) {
+  .letters {
+    font-size: .85rem;
+  }
+
+  ul {
+    margin-right: 1rem;
+  }
 }
