@@ -8,15 +8,18 @@ import configureStore from './configureStore.js';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import routes from './routes.js';
 
 const store = configureStore();
 
 const renderApp = () => {
     ReactDOM.render(
         <Router>
+
         <Provider store={store}>
         <App />
         </Provider>
+        {routes}
         </Router>
         , document.getElementById('root'));
         
