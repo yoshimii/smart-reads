@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';   
 import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
-import { instanceAxios } from '../../utils/axiosInstance';
+
 const SearchBar = () => {
     const [ searchPhrase, setSearchPhrase ] = useState({ description: '' })
 
