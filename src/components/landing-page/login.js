@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Form.css';
-import { axiosWithAuth } from '../utils/axiosWithAuth.js';
+import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 
 export default function Login () {
     const [ login, setLogin ] = useState({ username: '', password: '' })

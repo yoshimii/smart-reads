@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { axiosWithAuth } from '../utils/axiosWithAuth.js';
+import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 
 export default function Register() {
     const [ register, setRegister ] = useState({ username: '', password: '' })
