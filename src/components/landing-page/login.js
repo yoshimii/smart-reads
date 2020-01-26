@@ -15,7 +15,14 @@ export default function Login () {
     let handleSubmit = e => {
         e.preventDefault()
         axiosWithAuth().post('/login', login)
-            .then(res => console.log(res))
+        .then(res => {
+            localStorage.setItem('token', res.data.token);
+            // props.history.push('/home');
+            // console.log(props)
+            //props.logIn();//dispatch action to update logged in state to true
+            console.log(res.data)
+            
+          })
             .catch(err => console.log(err))
             
         setLogin({

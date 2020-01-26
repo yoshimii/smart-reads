@@ -14,7 +14,7 @@ State is managed with React-Redux
 
 ## Back End
 Backend engineer: [Eli Sacks](https://github.com/better-reads-9-20/Back-End)
-
+Back-End Api Docs: [Heroku App](https://better-reads-bw.herokuapp.com/api/docs/)
 
 ### Deployment
 Live site deployed with ZEIT Now.
