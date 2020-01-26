@@ -14,13 +14,14 @@ const store = configureStore();
 
 const renderApp = () => {
     ReactDOM.render(
-        <Router>
-
         <Provider store={store}>
+        <Router>
+    
         <App />
-        </Provider>
+       
         {routes}
         </Router>
+        </Provider>
         , document.getElementById('root'));
         
         if(process.env.NODE_ENV !== 'production' && module.hot) {
