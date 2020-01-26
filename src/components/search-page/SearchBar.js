@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 const SearchBar = ({dispatch, state}) => {
     const [ searchPhrase, setSearchPhrase ] = useState({ description: '' })
+    const [ resultsPhrase, setResultsPhrase ] = useState({ description: '' })
     const [ results, setResults ] = useState([])
     
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch({ type: 'REQUEST_BOOKS'})
-        console.log(searchPhrase)
         axiosWithAuth().post('https://better-reads-bw.herokuapp.com/api/user/description', searchPhrase)
             .then( res => {
                 setResults(res.data.books)
@@ -23,8 +23,9 @@ const SearchBar = ({dispatch, state}) => {
 
     const changeHandler = (e) => {
         setSearchPhrase({description: e.target.value})
+        setResultsPhrase({description: e.target.value})
     }
-    console.log(results)
+    
     return ([
         <form className="search-bar" onSubmit={submitHandler}>
         <p>What's your vibe?</p>
@@ -38,18 +39,19 @@ const SearchBar = ({dispatch, state}) => {
         <button>Search</button>
         </form>,
         <div>
-        {/* {state && <span>...Computing...Beep...Boop</span>} */}
         {!state && (
             <>
+            {state === false? <p>Based on your phrase: <span>{resultsPhrase.description}</span> the bookshelf reccomends: </p>: null}
             {results.map( book => {
-                console.log(typeof(book.authors))
-                return <ResultCard key={book.isbn} 
+                return <>                
+                <ResultCard key={book.isbn} 
                 title={book.title} 
                 authors={book.authors.split(' ').reverse().join(', ')} 
                 rating={book.rating} 
                 isbn={book.isbn}
                 />
-                
+                {/* <button onClick={dispatch({ type: 'SAVE_BOOK' })}>Save</button> */}
+                </>
         })}
             </>
         )}
