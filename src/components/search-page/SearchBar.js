@@ -3,19 +3,21 @@ import ResultCard from './ResultCard.js';
 import './SearchBar.css';   
 import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 import { connect } from 'react-redux';
+import { saveBook, requestBooks, receiveBooks } from '../../redux/actions/actions.js';
 
-const SearchBar = ({dispatch, state}) => {
+const SearchBar = ({ state, saveBook, requestBooks, receiveBooks }) => {
     const [ searchPhrase, setSearchPhrase ] = useState({ description: '' })
     const [ resultsPhrase, setResultsPhrase ] = useState({ description: '' })
     const [ results, setResults ] = useState([])
     
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch({ type: 'REQUEST_BOOKS'})
+        requestBooks()
         axiosWithAuth().post('https://better-reads-bw.herokuapp.com/api/user/description', searchPhrase)
             .then( res => {
                 setResults(res.data.books)
-                dispatch({ type: 'RECEIVE_BOOKS' })
+                console.log(res.data.books)
+                receiveBooks()
             })
             .then( err => console.log(err) )
         setSearchPhrase({description: ''})
@@ -44,13 +46,13 @@ const SearchBar = ({dispatch, state}) => {
             {state === false? <p>Based on your phrase: <span>{resultsPhrase.description}</span> the bookshelf reccomends: </p>: null}
             {results.map( book => {
                 return <>                
-                <ResultCard key={book.isbn} 
+                <ResultCard id={book.id} 
                 title={book.title} 
                 authors={book.authors.split(' ').reverse().join(', ')} 
                 rating={book.rating} 
                 isbn={book.isbn}
                 />
-                {/* <button onClick={dispatch({ type: 'SAVE_BOOK' })}>Save</button> */}
+                <button onClick={() => saveBook(book.id)}>Save</button>
                 </>
         })}
             </>
@@ -63,4 +65,4 @@ const SearchBar = ({dispatch, state}) => {
 
 const mapStateToProps = (state) => ({ state: state.isFetching })
 
-export default connect( mapStateToProps )(SearchBar)
+export default connect( mapStateToProps, { saveBook, requestBooks, receiveBooks } )(SearchBar)
